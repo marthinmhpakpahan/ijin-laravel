@@ -1,4 +1,48 @@
 </div>
+<div class="modal fade login" id="loginModal">
+  <div class="modal-dialog login animated">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="box">
+                 <div class="content">
+                    <div class="error"></div>
+                    <div class="form loginBox">
+                        <form id="login-form" method="" action="" accept-charset="UTF-8">
+                            <div class="form-group">
+                                <input id="login-username" class="form-control" type="text" placeholder="Username" name="username">
+                            </div>
+                            <div class="form-group">
+                                <input id="login-password" class="form-control" type="password" placeholder="Password" name="password">
+                            </div>
+                            <div class="form-group">
+                                <fieldset id="group1" class="form-control">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input type="radio" value="admin" name="user_type">  Admin</input>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="radio" value="dosen" name="user_type">  Dosen</input>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="radio" value="mahasiswa" name="user_type" checked>  Mahasiswa</input>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="form-group">
+                                <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
+                            </div>
+                        </form>
+                    </div>
+                 </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
 <footer class="footer">
   <div class="container-fluid">
     <div class="copyright center">
@@ -111,8 +155,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 <!-- Library for adding dinamically elements -->
 <script src="{{URL::asset('assets/js/plugins/arrive.min.js')}}"></script>
-<!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!-- Chartist JS -->
 <script src="{{URL::asset('assets/js/plugins/chartist.min.js')}}"></script>
 <!--  Notifications Plugin    -->
@@ -121,6 +163,17 @@
 <script src="{{URL::asset('assets/js/material-dashboard.js?v=2.1.2')}}" type="text/javascript"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="{{URL::asset('assets/demo/demo.js')}}"></script>
+<script>
+$(document).ready(function() {
+    $("#dashboard-login-btn").click(function(){
+        openLoginModal();
+    });
+    $(".calendar.day").on('click', function(){
+        alert("Test");
+    });
+});
+</script>
+
 <script>
 $(document).ready(function() {
 $().ready(function() {

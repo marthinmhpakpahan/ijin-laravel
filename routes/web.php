@@ -14,4 +14,8 @@ use App\Http\Controllers\PerijinanController;
 |
 */
 
-Route::get('/', [PerijinanController::class, 'dashboard']);
+Route::get('/', [PerijinanController::class, 'calendar']);
+Route::get('/dashboard', [PerijinanController::class, 'dashboard']);
+Route::get('/dosen', [PerijinanController::class, 'dosen']);
+Route::get('/mahasiswa', [PerijinanController::class, 'mahasiswa']);
+Route::get('/request', [PerijinanController::class, 'request']);
